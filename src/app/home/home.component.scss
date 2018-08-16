@@ -1,0 +1,28 @@
+@import "../variables.scss";
+
+.jumbotron{
+    background-image: url(../../assets/images/1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 800px;
+}
+
+.textoHero{
+    width: 48%;
+    color: $colorGrisMid;
+    margin-left: 8%;
+    margin-top: 40px;
+    p{
+        margin-top: 40px;
+    }
+}
+
+#infor{
+    background-color: antiquewhite;
+
+    .tituloSeccion{
+        text-align: center;
+        padding-top: 5px;
+        margin-bottom: 10px;
+    }
+}
