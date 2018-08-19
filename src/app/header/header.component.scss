@@ -4,7 +4,7 @@
     background-color: $colorAzulOscuro;
 }
 
-.navbar-nav{
+ul.navbar-nav{
     font-size: 16px;
 }
 
@@ -16,4 +16,16 @@
 
 .nav-link{
     color: $colorGrisDark !important;
+}
+
+.modal .modal-body{
+    margin: 0 auto;
+    .registro{
+        width: 400px;
+        height: 200px;
+        margin: 15px;
+        background-color: aquamarine;
+        text-align: center;
+        cursor: pointer;
+    }
 }
