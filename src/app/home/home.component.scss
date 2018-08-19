@@ -8,7 +8,8 @@
     min-height: 100vh;
     background-position: center;
     h1{
-        font-size: 4rem;
+        font-size: 3rem;
+        margin-top: 60px;
     }
     p{
         font-size: 1.5rem;
@@ -29,6 +30,11 @@
 hr.lineatitulo{
     width: 130px;
     background-color: $colorGrisMid;
+}
+
+hr.lineatituloOscuro{
+    width: 130px;
+    background-color: $colorGrisDark;
 }
 
 //Título de las secciones
