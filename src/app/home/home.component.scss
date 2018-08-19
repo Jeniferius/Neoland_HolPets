@@ -1,0 +1,121 @@
+@import "../variables.scss";
+
+//HERO
+.hero{
+    background-image: url(../../assets/images/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+    h1{
+        font-size: 3rem;
+        margin-top: 60px;
+    }
+    p{
+        font-size: 1.5rem;
+    }
+    .textoHero{
+        width: 45%;
+        color: $colorGrisMid;
+        margin-left: 8%;
+        padding-top: 80px;
+        p{
+            margin-top: 40px;
+            text-align: justify;
+        }
+    }
+}
+
+//Líneas de título de secciones
+hr.lineatitulo{
+    width: 130px;
+    background-color: $colorGrisMid;
+}
+
+hr.lineatituloOscuro{
+    width: 130px;
+    background-color: $colorGrisDark;
+}
+
+//Título de las secciones
+h2{
+    font-size: 30px;
+    color: $colorAzulOscuro;
+}
+
+//SECCIÓN DESCRIPCIÓN
+#descripcion{
+    p{
+        font-size: 1.5rem;
+    }
+}
+
+//SECCIÓN SERVICIOS
+#servicios{
+    background-color: $colorGrisLight;
+    
+    text-align: center;
+    
+    .card {
+        border: 0;
+        border-radius: 0;
+        margin-bottom: 25px;
+        background-color: $colorGrisLight;
+    }
+    .card-img-top{
+        max-width: 75%;
+        border-radius: 15%;
+        margin: 0 auto;
+    }
+    
+    .card-title{
+        margin-bottom: .75rem;
+        color: $colorPrincipal;
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .card-body .lineacard{
+        width: 60px;
+        background-color: $colorGrisMid;
+    }
+    
+    .card-footer {
+        padding: .75rem;
+        background-color: transparent;
+        border-top: 0;
+        color: black !important;
+        font-size: 140%;
+    }
+}
+
+#infor{
+    background-color: $colorPrincipal;
+}
+
+//MEDIAQUERYS:
+//xs
+@media (min-width: 320px) and (max-width: 480px) {
+    .textoHero{
+        color: green;
+    }
+ }
+
+// Small devices
+@media (min-width: 480px) and (max-width: 768px) {
+    .textoHero{
+        color: red;
+    }
+ }
+// Medium devices
+@media (min-width: 768px) and (max-width: 992px) { 
+    .textoHero{
+        color: blue;
+    }
+}
+// Large devices
+@media (min-width: 992px) and (max-width: 1200px) { 
+    .textoHero{
+        color: yellow;
+    }
+}

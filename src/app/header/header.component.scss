@@ -1,0 +1,19 @@
+@import '../variables.scss';
+
+.header{
+    background-color: $colorAzulOscuro;
+}
+
+.navbar-nav{
+    font-size: 16px;
+}
+
+.container-fluid{
+    height: 70px;
+    font-size: 16px;
+    background-color: $colorGrisLight;
+}
+
+.nav-link{
+    color: $colorGrisDark !important;
+}
