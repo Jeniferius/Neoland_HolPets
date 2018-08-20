@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro-buscar-cuidador',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroBuscarCuidadorComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup;
+  
+  constructor(private router: Router) { 
+    this.formulario = new FormGroup({
+      nombre: new FormControl('', Validators.required),
+      apellidos: new FormControl('', Validators.required),
+      edad: new FormControl('', [Validators.required]),
+      direccion: new FormControl('', Validators.required),
+      mail: new FormControl('', Validators.required),
+      tipoMascota: new FormControl('', Validators.required),
+      NombreMascota: new FormControl('', Validators.required),
+      razaMascota: new FormControl('', Validators.required),
+      edadMascota: new FormControl('', Validators.required),
+      pesoMascota: new FormControl('', Validators.required),
+    });
+  }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  enviarDatosPR() {
+    console.log(this.formulario.value);
   }
 
 }

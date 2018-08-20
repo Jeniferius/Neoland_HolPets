@@ -11,6 +11,7 @@ import { RegistroBuscarCuidadorComponent } from './registro-buscar-cuidador/regi
 import { SerCuidadorComponent } from './ser-cuidador/ser-cuidador.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { appRoutes } from './app.routing';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,14 +12,17 @@ export class RegistroSerCuidadorComponent implements OnInit {
   
   constructor(private router: Router) { 
     this.formulario = new FormGroup({
-      modalFormNameEx: new FormControl('', Validators.required),
-      modalFormEmailEx: new FormControl('', Validators.required),
-      modalFormSubjectEx: new FormControl('', Validators.required),
-      modalFormTextEx: new FormControl('', Validators.required),
+      nombre: new FormControl('', Validators.required),
+      apellidos: new FormControl('', Validators.required),
+      edad: new FormControl('', [Validators.required]),
+      direccion: new FormControl('', Validators.required),
+      mail: new FormControl('', Validators.required),
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  enviarDatosPR() {
+    console.log(this.formulario.value);
+  }
 }

@@ -1,3 +1,17 @@
-<p>
-  registro-buscar-cuidador works!
-</p>
+<div class="container">
+  <div class='signup'>
+      <form [formGroup]="formulario" (ngSubmit)="enviarDatosPR()">
+          <input type='text' placeholder='Nombre:' formControlName="nombre" />
+          <input type='text' placeholder='Apellidos:' formControlName="apellidos" />
+          <input type='text' placeholder='Edad:' formControlName="edad" />
+          <input type='text' placeholder='Dirección:' formControlName="direccion" />
+          <input type='text' placeholder='Correo Electrónico:' formControlName="mail" />
+          <input type='text' placeholder='Tipo de mascota:' formControlName="tipoMascota" />
+          <input type='text' placeholder='Nombre de la mascota:' formControlName="NombreMascota" />
+          <input type='text' placeholder='Raza de la mascota:' formControlName="razaMascota" />
+          <input type='text' placeholder='Edad de de la mascota:' formControlName="edadMascota" />
+          <input type='text' placeholder='Peso de de la mascota:' formControlName="pesoMascota" />
+          <input type='submit' placeholder='SUBMIT' [disabled]="!formulario.valid" />
+      </form>
+  </div>
+</div>
