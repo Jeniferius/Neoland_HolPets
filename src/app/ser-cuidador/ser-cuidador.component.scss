@@ -1,0 +1,12 @@
+@import "../variables.scss";
+
+hr.lineatitulo{
+    width: 130px;
+    background-color: $colorGrisMid;
+}
+
+//Título de las secciones
+h2{
+    font-size: 30px;
+    color: $colorAzulOscuro;
+}
