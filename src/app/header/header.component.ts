@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
 
   handleClickRegistro(ruta) {
     this.router.navigate([ruta]);
-    //Cerrar diálogo modal!
   }
 
 }

@@ -61,6 +61,7 @@ h2{
         max-width: 75%;
         border-radius: 15%;
         margin: 0 auto;
+        cursor: pointer;
     }
     
     .card-title{
@@ -68,6 +69,7 @@ h2{
         color: $colorPrincipal;
         font-weight: bold;
         font-size: 1.25rem;
+        cursor: pointer;
     }
 
     .card-body .lineacard{
@@ -81,6 +83,7 @@ h2{
         border-top: 0;
         color: black !important;
         font-size: 140%;
+        cursor: pointer;
     }
 }
 

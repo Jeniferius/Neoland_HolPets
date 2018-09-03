@@ -1,0 +1,57 @@
+<div class="container">
+    <div class='signup'>
+        <form [formGroup]="formulario" (ngSubmit)="enviarDatosPR()">
+            <div class="mb-5">
+                <input type='text' placeholder='Nombre de usuario:' formControlName="user" />
+                <input type='password' placeholder='Contraseña:' formControlName="pass" />
+            </div>
+
+            <div class="mb-5">
+                <input type='text' placeholder='Nombre:' formControlName="nombre" />
+                <input type='text' placeholder='Apellidos:' formControlName="apellidos" />
+                <input type='date' placeholder='Fecha de nacimiento:' formControlName="nacimiento" />
+                <input type='text' placeholder='Correo Electrónico:' formControlName="mail" />
+                <input type='text' placeholder='Dirección:' formControlName="direccion" />
+            </div>
+
+            <div class="mb-5">
+                <input type='text' placeholder='Nombre de su mascota:' formControlName="petNombre" />
+                <input type='text' placeholder='Raza:' formControlName="petRaza" />
+                <input type='date' placeholder='Fecha de nacimiento:' formControlName="petNacimiento" />
+                <input type='number' placeholder='Peso:' formControlName="petPeso" />
+                <input type='file' placeholder='Fotos:' formControlName="petFotos" />
+            </div>
+
+            <div class="mb-5">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+
+                <!-- botón yes no -->
+                <div class="anil_nepal" (click)="serCuidador()">
+                    <label class="switch switch-left-right">
+                        <input class="switch-input" type="checkbox" formControlName="serCuidador" value="no">
+                        <span class="switch-label" data-on="Sí" data-off="No"></span>
+                        <span class="switch-handle"></span>
+                    </label>
+                    <div class="mb-5" *ngIf="mostrar">
+                        <input type='text' placeholder='Nombre de su mascota:' formControlName="petNombre" />
+                        <input type='text' placeholder='Raza:' formControlName="petRaza" />
+                        <input type='date' placeholder='Fecha de nacimiento:' formControlName="petNacimiento" />
+                        <input type='number' placeholder='Peso:' formControlName="petPeso" />
+                        <input type='file' placeholder='Fotos:' formControlName="petFotos" />
+                    </div>
+                </div>
+            </div>
+
+            {{formulario.controls.serCuidador.value}}
+
+            
+            
+            <div class="handle">
+                ¿Quiéres ser cuidador?
+                <!-- <input type='text' placeholder='ORG:' formControlName="ORGANIZAR" />
+                <input type='text' placeholder='ORG:' formControlName="ORGANIZAR" /> -->
+            </div>
+            <input type='submit' placeholder='SUBMIT' [disabled]="!formulario.valid" />
+        </form>
+    </div>
+</div>

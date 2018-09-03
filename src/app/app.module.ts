@@ -6,12 +6,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { BuscadorComponent } from './buscador/buscador.component';
-import { RegistroSerCuidadorComponent } from './registro-ser-cuidador/registro-ser-cuidador.component';
-import { RegistroBuscarCuidadorComponent } from './registro-buscar-cuidador/registro-buscar-cuidador.component';
 import { SerCuidadorComponent } from './ser-cuidador/ser-cuidador.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistroComponent } from './registro/registro.component';
+import { SidebarModule } from 'ng-sidebar';
 
 @NgModule({
   declarations: [
@@ -20,14 +20,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     BuscadorComponent,
-    RegistroSerCuidadorComponent,
-    RegistroBuscarCuidadorComponent,
-    SerCuidadorComponent
+    SerCuidadorComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    SidebarModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [],
