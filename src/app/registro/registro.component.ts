@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-registro',
@@ -12,7 +13,7 @@ export class RegistroComponent implements OnInit {
   mostrar: boolean;
   formulario: FormGroup;
   
-  constructor(private router: Router) { 
+  constructor(private router: Router, private http: Http) { 
     this.formulario = new FormGroup({
       user: new FormControl('', Validators.required),
       pass: new FormControl('', Validators.required),
@@ -36,7 +37,10 @@ export class RegistroComponent implements OnInit {
   ngOnInit() {}
 
   enviarDatosPR() {
-    console.log(this.formulario.value);
+    let url = 'http://localhost:3000/api/registro';
+    this.http.post(url, this.formulario.value).subscribe(res => {
+      console.log(res.json());
+    });
   }
 
   serCuidador() {

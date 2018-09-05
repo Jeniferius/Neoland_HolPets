@@ -23,8 +23,7 @@
             </div>
 
             <div class="mb-5">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-
+                ¿Quiéres ser cuidador?
                 <!-- botón yes no -->
                 <div class="anil_nepal" (click)="serCuidador()">
                     <label class="switch switch-left-right">
@@ -32,25 +31,73 @@
                         <span class="switch-label" data-on="Sí" data-off="No"></span>
                         <span class="switch-handle"></span>
                     </label>
-                    <div class="mb-5" *ngIf="mostrar">
-                        <input type='text' placeholder='Nombre de su mascota:' formControlName="petNombre" />
-                        <input type='text' placeholder='Raza:' formControlName="petRaza" />
-                        <input type='date' placeholder='Fecha de nacimiento:' formControlName="petNacimiento" />
-                        <input type='number' placeholder='Peso:' formControlName="petPeso" />
-                        <input type='file' placeholder='Fotos:' formControlName="petFotos" />
-                    </div>
                 </div>
             </div>
 
-            {{formulario.controls.serCuidador.value}}
+            <div class="mb-5" *ngIf="mostrar">
+                <!-- Default inline 1-->
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="perros" name="cuidarTipoAnimal">
+                    <label class="custom-control-label" for="perros">Perros</label>
+                </div>
 
-            
-            
-            <div class="handle">
-                ¿Quiéres ser cuidador?
-                <!-- <input type='text' placeholder='ORG:' formControlName="ORGANIZAR" />
-                <input type='text' placeholder='ORG:' formControlName="ORGANIZAR" /> -->
+                <!-- Default inline 2-->
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="gatos" name="cuidarTipoAnimal">
+                    <label class="custom-control-label" for="gatos">Gatos</label>
+                </div>
+
+                <!-- Default inline 3-->
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="roedores" name="cuidarTipoAnimal">
+                    <label class="custom-control-label" for="roedores">Roedores</label>
+                </div>
+
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="perrosGatos" name="cuidarTipoAnimal">
+                    <label class="custom-control-label" for="perrosGatos">Perros y Gatos</label>
+                </div>
+
+                <!-- Default inline 2-->
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="otros" name="cuidarTipoAnimal">
+                    <label class="custom-control-label" for="otros">Otros</label>
+                </div>
+
+                <!-- Default inline 3-->
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="cualquiera" name="cuidarTipoAnimal">
+                    <label class="custom-control-label" for="cualquiera">Cualquiera</label>
+                </div>
             </div>
+
+            <div class="mb-5" *ngIf="mostrar">
+                <p> DISPONIBILIDAD</p>
+           
+                <!-- Default inline 1-->
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="mañanas" name="disponibilidad">
+                    <label class="custom-control-label" for="mañanas">Mañanas</label>
+                </div>
+
+                <!-- Default inline 2-->
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="tardes" name="disponibilidad">
+                    <label class="custom-control-label" for="tardes">Tardes</label>
+                </div>
+
+                <!-- Default inline 3-->
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="diaCompleto" name="disponibilidad">
+                    <label class="custom-control-label" for="diaCompleto">Todo el día</label>
+                </div>
+
+                <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="finesSemana" name="disponibilidad">
+                        <label class="custom-control-label" for="finesSemana">Fines de semana</label>
+                    </div>
+            </div>
+
             <input type='submit' placeholder='SUBMIT' [disabled]="!formulario.valid" />
         </form>
     </div>
