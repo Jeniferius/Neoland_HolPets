@@ -12,6 +12,11 @@ export class UsersService {
     let url = 'http://localhost:3000/api/registro';
     return this.http.post(url, datos).toPromise();
   }
+
+  loginUsuario(datos) {
+    let url = 'http://localhost:3000/api/usuarios';
+    return this.http.post(url, datos).toPromise();
+  }
 }
 
 

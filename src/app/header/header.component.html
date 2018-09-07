@@ -49,8 +49,13 @@
               </button>
             </div>
             <div class="modal-body">
-              <div>USER</div>
-              <div>PASS</div>
+              <form [formGroup]="formulario" (ngSubmit)="onSubmitLogin()">
+                <div class="mb-5">
+                  <input type='text' placeholder='Nombre de usuario:' formControlName="user" />
+                  <input type='password' placeholder='Contraseña:' formControlName="password" />
+                </div>
+                <input type='submit' placeholder='SUBMIT' [disabled]="!formulario.valid" />
+              </form>
             </div>
           </div>
         </div>
