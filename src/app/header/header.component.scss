@@ -18,14 +18,11 @@ ul.navbar-nav{
     color: $colorGrisDark !important;
 }
 
-.modal .modal-body{
-    margin: 0 auto;
-    .registro{
-        width: 400px;
-        height: 200px;
-        margin: 15px;
-        background-color: aquamarine;
+.modal .modal-content{
+    
+    background-color: $colorSecundario;
+    .modal-body{
         text-align: center;
-        cursor: pointer;
+        background-color: $colorRojoLight;
     }
 }

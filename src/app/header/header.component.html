@@ -29,9 +29,33 @@
       <button type="button" class="btn btn-outline-secondary mr-2" (click)="handleClickRegistro('/registro')">
         <i class="fa fa-user mr-2"></i>REGISTRARSE
       </button>
-      <button type="button" class="btn btn-outline-primary">
+      <!-- <button type="button" class="btn btn-outline-primary">
+        <i class="fa fa-sign-in mr-2"></i>INICIAR SESIÓN
+      </button> -->
+
+
+      <button type="button" class="btn btn-outline-secondary mr-2" data-toggle="modal" data-target="#exampleModalCenter">
         <i class="fa fa-sign-in mr-2"></i>INICIAR SESIÓN
       </button>
+
+      <!-- Modal del botón registro -->
+      <div class="modal fade" id="exampleModalCenter" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalCenterTitle">Iniciar Sesión</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>USER</div>
+              <div>PASS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </div>
 

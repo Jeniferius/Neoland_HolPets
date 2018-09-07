@@ -1,25 +1,25 @@
 <div class="container">
     <div class='signup'>
-        <form [formGroup]="formulario" (ngSubmit)="enviarDatosPR()">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="mb-5">
                 <input type='text' placeholder='Nombre de usuario:' formControlName="user" />
-                <input type='password' placeholder='Contraseña:' formControlName="pass" />
+                <input type='password' placeholder='Contraseña:' formControlName="password" />
             </div>
 
             <div class="mb-5">
                 <input type='text' placeholder='Nombre:' formControlName="nombre" />
                 <input type='text' placeholder='Apellidos:' formControlName="apellidos" />
-                <input type='date' placeholder='Fecha de nacimiento:' formControlName="nacimiento" />
-                <input type='text' placeholder='Correo Electrónico:' formControlName="mail" />
+                <input type='date' placeholder='Fecha de nacimiento:' formControlName="fecha_nac" />
+                <input type='text' placeholder='Correo Electrónico:' formControlName="email" />
                 <input type='text' placeholder='Dirección:' formControlName="direccion" />
             </div>
 
             <div class="mb-5">
-                <input type='text' placeholder='Nombre de su mascota:' formControlName="petNombre" />
-                <input type='text' placeholder='Raza:' formControlName="petRaza" />
-                <input type='date' placeholder='Fecha de nacimiento:' formControlName="petNacimiento" />
-                <input type='number' placeholder='Peso:' formControlName="petPeso" />
-                <input type='file' placeholder='Fotos:' formControlName="petFotos" />
+                <input type='text' placeholder='Nombre de su mascota:' formControlName="nombre_mascota" />
+                <input type='text' placeholder='Raza:' formControlName="raza" />
+                <input type='date' placeholder='Fecha de nacimiento:' formControlName="fecha_nac_mascota" />
+                <input type='number' placeholder='Peso:' formControlName="peso" />
+                <input type='file' placeholder='Fotos:' formControlName="fotos" />
             </div>
 
             <div class="mb-5">
@@ -27,7 +27,7 @@
                 <!-- botón yes no -->
                 <div class="anil_nepal" (click)="serCuidador()">
                     <label class="switch switch-left-right">
-                        <input class="switch-input" type="checkbox" formControlName="serCuidador" value="no">
+                        <input class="switch-input" type="checkbox" formControlName="ser_cuidador" value="no">
                         <span class="switch-label" data-on="Sí" data-off="No"></span>
                         <span class="switch-handle"></span>
                     </label>
@@ -37,36 +37,36 @@
             <div class="mb-5" *ngIf="mostrar">
                 <!-- Default inline 1-->
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="perros" name="cuidarTipoAnimal">
+                    <input type="radio" class="custom-control-input" value="perros" id="perros" formControlName="cuidar_tipo_mascota">
                     <label class="custom-control-label" for="perros">Perros</label>
                 </div>
 
                 <!-- Default inline 2-->
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="gatos" name="cuidarTipoAnimal">
+                    <input type="radio" class="custom-control-input" value="gatos" id="gatos" formControlName="cuidar_tipo_mascota">
                     <label class="custom-control-label" for="gatos">Gatos</label>
                 </div>
 
                 <!-- Default inline 3-->
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="roedores" name="cuidarTipoAnimal">
+                    <input type="radio" class="custom-control-input" value="roedores" id="roedores" formControlName="cuidar_tipo_mascota">
                     <label class="custom-control-label" for="roedores">Roedores</label>
                 </div>
 
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="perrosGatos" name="cuidarTipoAnimal">
+                    <input type="radio" class="custom-control-input" value="perrosGatos" id="perrosGatos" formControlName="cuidar_tipo_mascota">
                     <label class="custom-control-label" for="perrosGatos">Perros y Gatos</label>
                 </div>
 
                 <!-- Default inline 2-->
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="otros" name="cuidarTipoAnimal">
+                    <input type="radio" class="custom-control-input" value="otros" id="otros" formControlName="cuidar_tipo_mascota">
                     <label class="custom-control-label" for="otros">Otros</label>
                 </div>
 
                 <!-- Default inline 3-->
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="cualquiera" name="cuidarTipoAnimal">
+                    <input type="radio" class="custom-control-input" value="cualquiera" id="cualquiera" formControlName="cuidar_tipo_mascota">
                     <label class="custom-control-label" for="cualquiera">Cualquiera</label>
                 </div>
             </div>
@@ -76,24 +76,24 @@
            
                 <!-- Default inline 1-->
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="mañanas" name="disponibilidad">
-                    <label class="custom-control-label" for="mañanas">Mañanas</label>
+                    <input type="radio" class="custom-control-input" id="mananas" value="mananas" formControlName="cuidar_disponibilidad" >
+                    <label class="custom-control-label" for="mananas">Mañanas</label>
                 </div>
 
                 <!-- Default inline 2-->
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="tardes" name="disponibilidad">
+                    <input type="radio" class="custom-control-input" id="tardes" value="tardes" formControlName="cuidar_disponibilidad">
                     <label class="custom-control-label" for="tardes">Tardes</label>
                 </div>
 
                 <!-- Default inline 3-->
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="diaCompleto" name="disponibilidad">
+                    <input type="radio" class="custom-control-input" id="diaCompleto" value="diaCompleto" formControlName="cuidar_disponibilidad">
                     <label class="custom-control-label" for="diaCompleto">Todo el día</label>
                 </div>
 
                 <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="finesSemana" name="disponibilidad">
+                        <input type="radio" class="custom-control-input" id="finesSemana" value="finesSemana" formControlName="cuidar_disponibilidad">
                         <label class="custom-control-label" for="finesSemana">Fines de semana</label>
                     </div>
             </div>

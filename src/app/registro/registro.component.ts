@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Http } from '@angular/http';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-registro',
@@ -13,38 +13,42 @@ export class RegistroComponent implements OnInit {
   mostrar: boolean;
   formulario: FormGroup;
   
-  constructor(private router: Router, private http: Http) { 
+  constructor(private usersService: UsersService, private router: Router) { 
     this.formulario = new FormGroup({
       user: new FormControl('', Validators.required),
-      pass: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
       nombre: new FormControl('', Validators.required),
       apellidos: new FormControl('', Validators.required),
-      nacimiento: new FormControl('', [Validators.required]),
-      mail: new FormControl('', Validators.required),
+      fecha_nac: new FormControl('', [Validators.required]),
+      email: new FormControl('', Validators.required),
       direccion: new FormControl('', Validators.required),
-      petNombre: new FormControl('', ),
-      petRaza: new FormControl('', ),
-      petNacimiento: new FormControl('', ),
-      petPeso: new FormControl('', ),
-      petFotos: new FormControl(''),
-      serCuidador: new FormControl('')
+      nombre_mascota: new FormControl('', ),
+      raza: new FormControl('', ),
+      fecha_nac_mascota: new FormControl('', ),
+      peso: new FormControl('', ),
+      fotos: new FormControl(''),
+      ser_cuidador: new FormControl(''),
+      cuidar_tipo_mascota: new FormControl(''),
+      cuidar_disponibilidad: new FormControl('')
     });
-    this.formulario.controls.serCuidador.setValue(true);
-    this.mostrar = true;
-    
+    this.formulario.controls.ser_cuidador.setValue(true);
+    this.mostrar = true; 
   }
 
   ngOnInit() {}
 
-  enviarDatosPR() {
-    let url = 'http://localhost:3000/api/registro';
-    this.http.post(url, this.formulario.value).subscribe(res => {
-      console.log(res.json());
-    });
-  }
-
   serCuidador() {
-    if (this.formulario.controls.serCuidador.value) this.mostrar = false;
+    if (this.formulario.controls.ser_cuidador.value) this.mostrar = false;
     else this.mostrar = true;
   }
+
+  onSubmit() {
+    this.usersService.enviarDatosFormulario(this.formulario.value).then((res) => {
+    });
+    //volver a la home
+    this.router.navigate(['/home']);
+  }
+
+
+
 }
