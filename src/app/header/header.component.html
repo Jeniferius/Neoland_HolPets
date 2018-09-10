@@ -49,12 +49,13 @@
               </button>
             </div>
             <div class="modal-body">
+              <p class="mensajeError">Usuario o contraseña incorrectos</p>
               <form [formGroup]="formulario" (ngSubmit)="onSubmitLogin()">
                 <div class="mb-5">
                   <input type='text' placeholder='Nombre de usuario:' formControlName="user" />
                   <input type='password' placeholder='Contraseña:' formControlName="password" />
                 </div>
-                <input type='submit' placeholder='SUBMIT' [disabled]="!formulario.valid" />
+                <input class="botonLogin" type='submit' placeholder='SUBMIT' [disabled]="!formulario.valid" />
               </form>
             </div>
           </div>

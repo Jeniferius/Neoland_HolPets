@@ -1,5 +1,8 @@
 @import "../variables.scss";
 
+agm-map{
+    height: 300px;
+}
 hr.lineatitulo{
     width: 130px;
     background-color: $colorGrisMid;
@@ -9,4 +12,8 @@ hr.lineatitulo{
 h2{
     font-size: 30px;
     color: $colorAzulOscuro;
+}
+
+.columnaFiltros{
+    background-color: $colorPrincipal;
 }

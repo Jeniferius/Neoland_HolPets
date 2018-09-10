@@ -9,14 +9,23 @@ export class UsersService {
   constructor(private http: Http) { }
 
   enviarDatosFormulario(datos) {
-    let url = 'http://localhost:3000/api/registro';
-    return this.http.post(url, datos).toPromise();
+    let urlRegistro = 'http://localhost:3000/api/registro'
+    return this.http.post(urlRegistro, datos).toPromise();
   }
 
   loginUsuario(datos) {
-    let url = 'http://localhost:3000/api/usuarios';
-    return this.http.post(url, datos).toPromise();
+    let urlUsuarios = 'http://localhost:3000/api/usuarios'
+    return this.http.post(urlUsuarios, datos).toPromise();
   }
+
+  mostrarAllCuidadores() {
+    let urlBuscador = 'http://localhost:3000/api/buscador'
+    return this.http.get(urlBuscador).toPromise();
+  }
+
+
+  
+
 }
 
 

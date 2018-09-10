@@ -1,71 +1,80 @@
-<section id="descripcion" class="container-fluid pt-4">
-  <div class="container">
-    <hr class="lineatitulo">
-    <h2 class="font-weight-bold text-center">Buscador</h2>
-    <hr class="lineatitulo mb-5 mt-4">
+<div class="row">
+  <div class="columnaFiltros col-4">
     <div class="text-center pb-5">
-      Filtros
-    </div>
-  </div>
-</section>
-
-<!-- <ng-sidebar>
-  <p>Sidebar contents</p>
-</ng-sidebar> -->
-
-<!-- Cards -->
-<div class="cards container mt-5">
-  <div class="card mb-5">
-    <div class="titulo">
-      <h3 class="text-center">Nombre - Ciudad</h3>
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <img src="../../assets/images/logo.png" alt="" width="100px" />
-      </div>
-      <div class="col-9">
-        <div class="row">
-          <ul class="col-6">
-            <li>Edad</li>
-            <li>Mascota preferida</li>
-          </ul>
-          <ul class="col-6">
-            <li>Distancia</li>
-            <li>Valoraciones</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="ui bottom attached button">
-      <i class="add icon"></i>
-      Más información
+      Filtros y Mapa
+      <agm-map [latitude]='lat' [longitude]='lon'>
+        <agm-marker [latitude]='lat' [longitude]='lon'></agm-marker>
+        <agm-marker [latitude]='lat2' [longitude]='lon2'></agm-marker>
+      </agm-map>
     </div>
   </div>
 
-  <div class="card mb-5">
-    <div class="titulo">
-      <h3 class="text-center">Nombre - Ciudad</h3>
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <img src="../../assets/images/logo.png" alt="" width="100px" />
+  <div id="contenedorCards" class="col-8">
+    <!-- Título -->
+    <section id="descripcion" class="container-fluid pt-4 pb-1">
+      <div class="container">
+        <hr class="lineatitulo">
+        <h2 class="font-weight-bold text-center">Buscador</h2>
+        <hr class="lineatitulo mb-5 mt-4">
       </div>
-      <div class="col-9">
+    </section>
+    <!-- Cards -->
+    <div class="cards container mt-5">
+      <div class="card mb-5">
+        <div class="titulo">
+          <h3 class="text-center">ee - Ciudad</h3>
+        </div>
         <div class="row">
-          <ul class="col-6">
-            <li>Edad</li>
-            <li>Mascota preferida</li>
-          </ul>
-          <ul class="col-6">
-            <li>Distancia</li>
-            <li>Valoraciones</li>
-          </ul>
+          <div class="col-3">
+            <img src="../../assets/images/logo.png" alt="" width="100px" />
+          </div>
+          <div class="col-9">
+            <div class="row">
+              <ul class="col-6">
+                <li>Edad</li>
+                <li>Mascota preferida</li>
+              </ul>
+              <ul class="col-6">
+                <li>Distancia</li>
+                <li>Valoraciones</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ui bottom attached button">
+          <i class="add icon"></i>
+          Más información
         </div>
       </div>
     </div>
-    <div class="ui bottom attached button">
-      <i class="add icon"></i>
-      Más información
+
+    <div class="cards container mt-5">
+      <div class="card mb-5">
+        <div class="titulo">
+          <h3 class="text-center">err - Ciudad</h3>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <img src="../../assets/images/logo.png" alt="" width="100px" />
+          </div>
+          <div class="col-9">
+            <div class="row">
+              <ul class="col-6">
+                <li>Edad</li>
+                <li>Mascota preferida</li>
+              </ul>
+              <ul class="col-6">
+                <li>Distancia</li>
+                <li>Valoraciones</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ui bottom attached button">
+          <i class="add icon"></i>
+          Más información
+        </div>
+      </div>
     </div>
   </div>
 </div>

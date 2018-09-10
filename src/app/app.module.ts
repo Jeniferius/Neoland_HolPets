@@ -13,6 +13,8 @@ import { appRoutes } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
 import { SidebarModule } from 'ng-sidebar';
+import { AgmCoreModule } from '@agm/core';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,11 @@ import { SidebarModule } from 'ng-sidebar';
     FormsModule,
     SidebarModule.forRoot(),
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    GooglePlaceModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCvJNLOg6tu8CXWqGgKUAUZH9TsoyUj9vY'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

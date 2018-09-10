@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from '../users.service';
+import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
+import { Address } from 'ngx-google-places-autocomplete/objects/address';
 
 @Component({
   selector: 'app-registro',
@@ -12,8 +14,13 @@ export class RegistroComponent implements OnInit {
 
   mostrar: boolean;
   formulario: FormGroup;
+  options: any;
   
   constructor(private usersService: UsersService, private router: Router) { 
+    this.options = {
+      componentRestrictions: { country: 'es' }
+    }
+    
     this.formulario = new FormGroup({
       user: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
@@ -35,7 +42,16 @@ export class RegistroComponent implements OnInit {
     this.mostrar = true; 
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
+  
+  @ViewChild('places') places: GooglePlaceDirective;
+
+    public handleAddressChange(address: Address) {
+        console.log(address.geometry.location.lng());
+        console.log(address.geometry.location.lat());
+        console.log(address.geometry.location.toJSON());
+        console.log(address.geometry.viewport.getNorthEast());
+    }
 
   serCuidador() {
     if (this.formulario.controls.ser_cuidador.value) this.mostrar = false;

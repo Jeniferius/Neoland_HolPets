@@ -24,5 +24,10 @@ ul.navbar-nav{
     .modal-body{
         text-align: center;
         background-color: $colorRojoLight;
+        .mensajeError{
+            color: red;
+            font-weight: bold;
+            display: none;
+        }
     }
 }

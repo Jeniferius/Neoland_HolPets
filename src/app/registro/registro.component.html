@@ -11,7 +11,8 @@
                 <input type='text' placeholder='Apellidos:' formControlName="apellidos" />
                 <input type='date' placeholder='Fecha de nacimiento:' formControlName="fecha_nac" />
                 <input type='text' placeholder='Correo Electrónico:' formControlName="email" />
-                <input type='text' placeholder='Dirección:' formControlName="direccion" />
+                <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" formControlName="direccion"/>
+            
             </div>
 
             <div class="mb-5">
