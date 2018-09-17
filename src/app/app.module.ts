@@ -15,6 +15,9 @@ import { RegistroComponent } from './registro/registro.component';
 import { SidebarModule } from 'ng-sidebar';
 import { AgmCoreModule } from '@agm/core';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { VistaCuidadorComponent } from './vista-cuidador/vista-cuidador.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { MensajesComponent } from './mensajes/mensajes.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     HomeComponent,
     BuscadorComponent,
     SerCuidadorComponent,
-    RegistroComponent
+    RegistroComponent,
+    VistaCuidadorComponent,
+    PerfilComponent,
+    MensajesComponent
   ],
   imports: [
     BrowserModule,

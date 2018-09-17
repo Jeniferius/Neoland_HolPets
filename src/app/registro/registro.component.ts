@@ -15,12 +15,14 @@ export class RegistroComponent implements OnInit {
   mostrar: boolean;
   formulario: FormGroup;
   options: any;
-  
-  constructor(private usersService: UsersService, private router: Router) { 
+  latitud: number;
+  longitud: number;
+
+  constructor(private usersService: UsersService, private router: Router) {
     this.options = {
       componentRestrictions: { country: 'es' }
     }
-    
+
     this.formulario = new FormGroup({
       user: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
@@ -29,29 +31,27 @@ export class RegistroComponent implements OnInit {
       fecha_nac: new FormControl('', [Validators.required]),
       email: new FormControl('', Validators.required),
       direccion: new FormControl('', Validators.required),
-      nombre_mascota: new FormControl('', ),
-      raza: new FormControl('', ),
-      fecha_nac_mascota: new FormControl('', ),
-      peso: new FormControl('', ),
+      nombre_mascota: new FormControl(''),
+      raza: new FormControl(''),
+      fecha_nac_mascota: new FormControl(''),
+      peso: new FormControl(''),
       fotos: new FormControl(''),
       ser_cuidador: new FormControl(''),
       cuidar_tipo_mascota: new FormControl(''),
       cuidar_disponibilidad: new FormControl('')
     });
     this.formulario.controls.ser_cuidador.setValue(true);
-    this.mostrar = true; 
+    this.mostrar = true;
   }
 
   ngOnInit() { }
-  
+
   @ViewChild('places') places: GooglePlaceDirective;
 
-    public handleAddressChange(address: Address) {
-        console.log(address.geometry.location.lng());
-        console.log(address.geometry.location.lat());
-        console.log(address.geometry.location.toJSON());
-        console.log(address.geometry.viewport.getNorthEast());
-    }
+  public handleAddressChange(address: Address) {
+    this.longitud = address.geometry.location.lng();
+    this.latitud = address.geometry.location.lat();
+  }
 
   serCuidador() {
     if (this.formulario.controls.ser_cuidador.value) this.mostrar = false;
@@ -59,8 +59,12 @@ export class RegistroComponent implements OnInit {
   }
 
   onSubmit() {
-    this.usersService.enviarDatosFormulario(this.formulario.value).then((res) => {
+    let info = this.formulario.value
+    info.latitud = this.latitud
+    info.longitud = this.longitud
+    this.usersService.enviarDatosFormulario(info).then((res) => {
     });
+    console.log(info);
     //volver a la home
     this.router.navigate(['/home']);
   }

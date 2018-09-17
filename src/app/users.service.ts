@@ -23,6 +23,11 @@ export class UsersService {
     return this.http.get(urlBuscador).toPromise();
   }
 
+  mostrarChatporId(pId) {
+    let urlChat = 'http://localhost:3000/api/chat'
+    return this.http.post(urlChat, { id: pId }).toPromise();
+  }
+
 
   
 
