@@ -6,6 +6,7 @@ import { RegistroComponent } from "./registro/registro.component";
 import { VistaCuidadorComponent } from "./vista-cuidador/vista-cuidador.component";
 import { PerfilComponent } from "./perfil/perfil.component";
 import { MensajesComponent } from "./mensajes/mensajes.component";
+import { ChatComponent } from "./chat/chat.component";
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -14,8 +15,8 @@ export const appRoutes: Routes = [
     { path: 'serCuidador', component: SerCuidadorComponent },
     { path: 'buscador', component: BuscadorComponent },
     { path: 'informacionCuidador/:id', component: VistaCuidadorComponent },
-    {
-        path: 'perfil/:id', component: PerfilComponent, children:[
-            { path: 'mensajes', component: MensajesComponent }
-    ] }
+    // { path: 'perfil/:id', component: PerfilComponent },
+    { path: 'perfil/:id/mensajes', component: MensajesComponent },
+    { path: 'perfil/:id/mensajes/chat', component: ChatComponent }
+    
 ]

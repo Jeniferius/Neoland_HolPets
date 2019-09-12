@@ -13,7 +13,7 @@ export class MensajesComponent implements OnInit {
   id: number;
   numeroChats: number;
   constructor(private activatedRoute: ActivatedRoute, private usersService: UsersService) {
-    this.activatedRoute.parent.params.subscribe((params) => {
+    this.activatedRoute.params.subscribe((params) => {
       this.id = params.id
       this.usersService.mostrarChatporId(this.id).then((res) => {
         console.log(res.json());

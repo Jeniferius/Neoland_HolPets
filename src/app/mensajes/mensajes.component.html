@@ -1,6 +1,6 @@
 <div class="container mt-5 mb-5">
   <ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let index of numeroChats">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let index of numeroChats" [routerLink]="['/perfil', index.id, 'mensajes', 'chat']">
       {{index.nombre}} - {{index.fecha | date: 'dd / MMMM / yyyy'}} - {{index.fecha | date: 'hh:mm:ss'}}
       <span class="badge badge-primary badge-pill">{{index.id-6+index.id*2-68}}</span>
     </li>

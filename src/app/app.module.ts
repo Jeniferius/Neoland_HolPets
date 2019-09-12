@@ -18,6 +18,7 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { VistaCuidadorComponent } from './vista-cuidador/vista-cuidador.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MensajesComponent } from './mensajes/mensajes.component';
     RegistroComponent,
     VistaCuidadorComponent,
     PerfilComponent,
-    MensajesComponent
+    MensajesComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
